@@ -11,6 +11,7 @@ import { LaunchBannerStrip } from './components/LaunchBannerStrip';
 import { SocialCaptionsModal } from './components/SocialCaptionsModal';
 import { ChiefEditorModal } from './components/ChiefEditorModal';
 import { LegalNoticeModal } from './components/LegalNoticeModal';
+import { StoryEcosystemModal } from './components/StoryEcosystemModal';
 import { Footer } from './components/Footer';
 import { INITIAL_CHRONICLES, ChronicleStory } from './data/chronicles';
 import { Sparkles, CheckCircle2 } from 'lucide-react';
@@ -18,6 +19,7 @@ import { Sparkles, CheckCircle2 } from 'lucide-react';
 export default function App() {
   const [chronicles, setChronicles] = useState<ChronicleStory[]>(INITIAL_CHRONICLES);
   const [activeStoryForCaptions, setActiveStoryForCaptions] = useState<ChronicleStory | null>(null);
+  const [selectedStoryForEcosystem, setSelectedStoryForEcosystem] = useState<ChronicleStory | null>(null);
   const [modalMode, setModalMode] = useState<'captions' | 'preview'>('captions');
   const [isEditorOpen, setIsEditorOpen] = useState(false);
   const [isAdminMode, setIsAdminMode] = useState(false);
@@ -95,6 +97,7 @@ export default function App() {
           showAdminTools={isAdminMode || isEditorOpen}
           onOpenCaptions={handleOpenCaptions}
           onPreviewMockup={handlePreviewMockup}
+          onSelectStory={(story) => setSelectedStoryForEcosystem(story)}
           onOpenEditor={() => setIsEditorOpen(true)}
         />
 
@@ -105,6 +108,13 @@ export default function App() {
       {/* 5. Menú de Navegación de Pie de Página (Minimalista: App, Store, Aviso Legal) */}
       <Footer
         onOpenLegal={() => setIsLegalOpen(true)}
+      />
+
+      {/* Interactive Ecosystem Story Destination Modal */}
+      <StoryEcosystemModal
+        story={selectedStoryForEcosystem}
+        isOpen={Boolean(selectedStoryForEcosystem)}
+        onClose={() => setSelectedStoryForEcosystem(null)}
       />
 
       {/* Modals & Overlays */}

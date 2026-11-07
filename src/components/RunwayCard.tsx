@@ -18,13 +18,15 @@ interface RunwayCardProps {
   showAdminTools?: boolean;
   onOpenCaptions: (story: ChronicleStory) => void;
   onPreviewMockup: (story: ChronicleStory) => void;
+  onSelectStory?: (story: ChronicleStory) => void;
 }
 
 export const RunwayCard: React.FC<RunwayCardProps> = ({
   story,
   showAdminTools = false,
   onOpenCaptions,
-  onPreviewMockup
+  onPreviewMockup,
+  onSelectStory
 }) => {
   const images = story.imagenes_runway?.length ? story.imagenes_runway : [story.imagen_9_16];
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
@@ -70,7 +72,10 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
   };
 
   return (
-    <article className="flex flex-col w-full bg-white border border-neutral-300 shadow-sm transition-all duration-300 hover:shadow-xl hover:border-neutral-500 group">
+    <article
+      onClick={() => onSelectStory?.(story)}
+      className="flex flex-col w-full bg-white border border-neutral-300 shadow-sm transition-all duration-300 hover:shadow-2xl hover:border-neutral-800 group cursor-pointer"
+    >
       {/* Editorial Meta Bar */}
       <div className="flex items-center justify-between px-3 py-2 bg-neutral-100 border-b border-neutral-300 text-[10px] font-mono tracking-widest uppercase text-neutral-600">
         <span className="font-semibold text-neutral-900">{story.categoria}</span>
@@ -107,7 +112,10 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
         <div className="absolute top-3 inset-x-3 flex items-center justify-end z-10">
           <div className="flex items-center gap-1.5">
             <button
-              onClick={() => setIsPlayingRunway(!isPlayingRunway)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsPlayingRunway(!isPlayingRunway);
+              }}
               title={isPlayingRunway ? 'Pause Catwalk' : 'Play Catwalk'}
               className="p-1.5 bg-black/70 hover:bg-black text-white rounded-xs border border-white/20 transition-colors"
             >
@@ -115,7 +123,10 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
             </button>
             {showAdminTools && (
               <button
-                onClick={() => onPreviewMockup(story)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onPreviewMockup(story);
+                }}
                 title="Preview in 9:16 Social Mockup (Editor)"
                 className="p-1.5 bg-black/70 hover:bg-black text-white rounded-xs border border-white/20 transition-colors"
               >
@@ -182,7 +193,10 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
           {showAdminTools && (
             <div className="mt-4 pt-3 border-t border-neutral-200 flex items-center justify-between gap-2">
               <button
-                onClick={() => onOpenCaptions(story)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onOpenCaptions(story);
+                }}
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors"
               >
                 <Share2 className="w-3.5 h-3.5" />

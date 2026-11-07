@@ -8,6 +8,7 @@ interface ChroniclesRunwaySectionProps {
   showAdminTools?: boolean;
   onOpenCaptions: (story: ChronicleStory) => void;
   onPreviewMockup: (story: ChronicleStory) => void;
+  onSelectStory?: (story: ChronicleStory) => void;
   onOpenEditor?: () => void;
 }
 
@@ -16,6 +17,7 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
   showAdminTools = false,
   onOpenCaptions,
   onPreviewMockup,
+  onSelectStory,
   onOpenEditor
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -130,6 +132,7 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
             showAdminTools={showAdminTools}
             onOpenCaptions={onOpenCaptions}
             onPreviewMockup={onPreviewMockup}
+            onSelectStory={onSelectStory}
           />
         ))}
       </div>
