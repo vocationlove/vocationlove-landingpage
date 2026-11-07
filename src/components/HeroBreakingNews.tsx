@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ExternalLink, ArrowRight, Radio } from 'lucide-react';
 import { BREAKING_NEWS_HERO, BRAND_PARTNERS } from '../data/chronicles';
 
@@ -7,18 +7,59 @@ interface HeroBreakingNewsProps {
   onSelectStory?: (id: string) => void;
 }
 
+const HEADER_ROTATING_IMAGES = [
+  { id: 'vlc', src: '/assets/aistudio/vlc_66f6ec40.png', label: 'VLC - True Connection' },
+  { id: 'vlc6', src: '/assets/aistudio/vlc6_0823f608.png', label: 'vlc6 - Brotherhood & Freedom' },
+  { id: 'vlc9', src: '/assets/aistudio/vlc9_1de0510d.png', label: 'vlc9 - Joy in Bloom' },
+  { id: 'vlc10', src: '/assets/aistudio/vlc10_31069266.png', label: 'vlc10 - Radiant Fellowship' }
+];
+
 export const HeroBreakingNews: React.FC<HeroBreakingNewsProps> = ({ onExploreApp }) => {
+  const [currentHeaderIndex, setCurrentHeaderIndex] = useState(0);
+
+  // Slow, serene cross-fade rotation between the 4 authentic landscape header images (10s interval)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeaderIndex((prev) => (prev + 1) % HEADER_ROTATING_IMAGES.length);
+    }, 10000);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <section id="breaking-news" className="w-full bg-neutral-900 border-b border-neutral-300">
       {/* 1. Panoramic Hero Container with VOCATIONLOVE Overlay and VOCATIONLOVE.APP Card */}
       <div className="relative w-full overflow-hidden bg-neutral-950 aspect-[16/7] min-h-[380px] sm:min-h-[460px] md:min-h-[520px] max-h-[640px] flex items-end">
-        {/* Background Image: Panoramic HOME Header (Apaisada) */}
-        <img
-          src="/assets/aistudio/Home.png"
-          alt="VocationLove - In Bloom"
-          referrerPolicy="no-referrer"
-          className="absolute inset-0 w-full h-full object-cover object-center filter contrast-105 brightness-95"
-        />
+        {/* Background Rotating Images: VLC, vlc6, vlc9, vlc10 */}
+        <div className="absolute inset-0 overflow-hidden">
+          {HEADER_ROTATING_IMAGES.map((imgItem, idx) => (
+            <img
+              key={imgItem.id}
+              src={imgItem.src}
+              alt={imgItem.label}
+              referrerPolicy="no-referrer"
+              className={`absolute inset-0 w-full h-full object-cover object-center filter contrast-105 brightness-95 transition-all duration-1000 ease-in-out ${
+                idx === currentHeaderIndex
+                  ? 'opacity-100 scale-100'
+                  : 'opacity-0 scale-105 pointer-events-none'
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Subtle Slide Indicators */}
+        <div className="absolute bottom-2 sm:bottom-3 right-4 sm:right-6 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-xs px-2 py-1 rounded-full border border-white/10">
+          {HEADER_ROTATING_IMAGES.map((item, dotIdx) => (
+            <button
+              key={item.id}
+              onClick={() => setCurrentHeaderIndex(dotIdx)}
+              title={item.label}
+              className={`h-1.5 transition-all rounded-full ${
+                dotIdx === currentHeaderIndex ? 'w-5 bg-white' : 'w-1.5 bg-white/40 hover:bg-white/70'
+              }`}
+              aria-label={`Go to slide ${dotIdx + 1}`}
+            />
+          ))}
+        </div>
 
         {/* Cinematic gradient vignette */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/30 pointer-events-none" />

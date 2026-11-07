@@ -65,7 +65,7 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
         {/* Action Controls / Status badge */}
         <div className="flex items-center gap-3 shrink-0">
           <div className="px-3.5 py-1.5 bg-neutral-950 text-white text-[11px] font-mono tracking-widest uppercase border border-neutral-800">
-            55 EDITORIAL RELEASES • SIMULTANEOUS MULTIPLATFORM
+            your presence and continuity are truly valued
           </div>
         </div>
       </div>
