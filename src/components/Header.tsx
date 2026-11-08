@@ -32,11 +32,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenLegal }) => {
             LOVE
           </a>
           <a href="#ecosistema-app" className="hover:text-black transition-colors whitespace-nowrap shrink-0">
-            ECOSYSTEM
-          </a>
-          <a href="#app-shorts" className="hover:text-black transition-colors whitespace-nowrap shrink-0 flex items-center gap-1.5">
-            <span>SHORTS</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-pulse" />
+            ECOSISTEM
           </a>
           <button
             onClick={onOpenLegal}

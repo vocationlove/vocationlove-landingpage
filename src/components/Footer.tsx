@@ -42,12 +42,6 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
             >
               Store
             </a>
-            <a
-              href="#app-shorts"
-              className="text-neutral-300 hover:text-white transition-colors"
-            >
-              Shorts
-            </a>
             <button
               onClick={onOpenLegal}
               className="text-neutral-300 hover:text-white transition-colors cursor-pointer"
