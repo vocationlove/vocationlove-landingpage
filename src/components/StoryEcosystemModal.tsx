@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { ChronicleStory } from '../data/chronicles';
-import { X, ExternalLink, ArrowRight, Flower2, Smartphone, Sparkles, Heart } from 'lucide-react';
+import { X, ArrowRight, ExternalLink } from 'lucide-react';
 
 interface StoryEcosystemModalProps {
   story: ChronicleStory | null;
@@ -29,35 +29,36 @@ export const StoryEcosystemModal: React.FC<StoryEcosystemModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md animate-in fade-in duration-150"
       onClick={onClose}
     >
+      {/* Brutalist Frame: completely straight corners (rounded-none), solid 2px black border */}
       <div
-        className="relative w-full max-w-lg bg-white rounded-xs border border-neutral-300 shadow-2xl overflow-hidden flex flex-col max-h-[92vh] animate-in zoom-in-95 duration-200"
+        className="relative w-full max-w-lg bg-white rounded-none border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col max-h-[92vh] animate-in zoom-in-95 duration-150"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Top Header Bar */}
-        <div className="flex items-center justify-between px-5 py-3.5 bg-neutral-950 text-white border-b border-neutral-800">
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
-            <span className="font-cinzel text-xs font-bold uppercase tracking-widest text-neutral-200">
+        {/* Top Header Bar: Solid black with clean typography */}
+        <div className="flex items-center justify-between px-6 py-3.5 bg-black text-white border-b-2 border-black rounded-none">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 bg-white rounded-none inline-block" />
+            <span className="font-times font-bold text-xs uppercase tracking-widest text-white">
               VOCATIONLOVE • ECOSYSTEM
             </span>
           </div>
           <button
             onClick={onClose}
-            className="p-1 text-neutral-400 hover:text-white transition-colors cursor-pointer rounded-xs"
+            className="p-1 text-neutral-400 hover:text-white transition-colors cursor-pointer rounded-none border border-transparent hover:border-white"
             aria-label="Close"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Modal Scrollable Content */}
-        <div className="overflow-y-auto p-5 sm:p-6 space-y-6">
-          {/* Story Preview Card Header */}
-          <div className="flex gap-4 items-start p-3 bg-neutral-50 border border-neutral-200 rounded-xs">
-            <div className="w-20 sm:w-24 aspect-[2/3] shrink-0 overflow-hidden bg-neutral-900 rounded-xs shadow-xs">
+        {/* Modal Content Body */}
+        <div className="overflow-y-auto p-6 space-y-6 bg-white">
+          {/* Story Preview Card Header - Brutalist box with solid borders */}
+          <div className="flex gap-4 items-start p-4 bg-neutral-50 border-2 border-black rounded-none">
+            <div className="w-20 sm:w-24 aspect-[2/3] shrink-0 overflow-hidden bg-black rounded-none border border-black shadow-xs">
               <img
                 src={coverImage}
                 alt={story.titular}
@@ -66,80 +67,74 @@ export const StoryEcosystemModal: React.FC<StoryEcosystemModalProps> = ({
               />
             </div>
             <div className="flex-1 min-w-0">
-              <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-500 font-semibold mb-1">
+              <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-600 font-bold mb-1">
                 {story.categoria}
               </div>
-              <h3 className="font-bodoni font-bold italic text-sm sm:text-base text-neutral-950 uppercase leading-snug tracking-tight line-clamp-2">
+              <h3 className="font-times font-bold text-sm sm:text-base text-black uppercase leading-snug tracking-tight line-clamp-2">
                 {story.titular}
               </h3>
-              <p className="mt-1 text-xs text-neutral-600 font-sans line-clamp-2 leading-relaxed">
+              <p className="mt-1.5 text-xs text-neutral-700 font-sans line-clamp-2 leading-relaxed">
                 {story.bajada}
               </p>
             </div>
           </div>
 
-          {/* Interactive Navigation Options */}
-          <div className="space-y-3">
-            <div className="text-[11px] font-mono uppercase tracking-widest text-neutral-500 font-bold px-1">
+          {/* Brutalist Action Buttons: No phone or flower icons, pure editorial design */}
+          <div className="space-y-3.5 pt-1">
+            <div className="text-[11px] font-mono uppercase tracking-widest text-black font-bold px-0.5">
               CHOOSE DESTINATION
             </div>
 
-            {/* BUTTON 1: ENTER THE SOCIAL APP */}
+            {/* BUTTON 1: ENTER THE SOCIAL APP (Solid Black, sharp corners, bold serif typography) */}
             <a
               href="https://vocationlove.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center justify-between p-4 sm:p-5 bg-neutral-950 hover:bg-neutral-900 text-white rounded-xs border border-neutral-800 transition-all duration-300 shadow-md hover:shadow-xl cursor-pointer"
+              className="group relative flex items-center justify-between p-4 sm:p-5 bg-black hover:bg-neutral-900 text-white rounded-none border-2 border-black transition-all duration-150 cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,0.3)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5"
             >
-              <div className="flex items-center gap-3.5">
-                <div className="p-2.5 bg-neutral-900 group-hover:bg-neutral-800 rounded-xs border border-neutral-700 transition-colors">
-                  <Smartphone className="w-5 h-5 text-rose-400" />
+              <div className="flex-1 min-w-0 pr-3">
+                <div className="font-times text-base sm:text-lg font-bold tracking-wider uppercase text-white leading-tight">
+                  ENTER THE SOCIAL APP
                 </div>
-                <div>
-                  <div className="font-cinzel text-sm sm:text-base font-bold tracking-wider uppercase text-white group-hover:text-rose-200 transition-colors">
-                    ENTER THE SOCIAL APP
-                  </div>
-                  <div className="text-[11px] font-mono text-neutral-400 mt-0.5">
-                    https://vocationlove.app
-                  </div>
+                <div className="text-xs font-mono text-neutral-300 mt-1 truncate">
+                  vocationlove.app • For those who dare
                 </div>
               </div>
-              <ArrowRight className="w-5 h-5 text-neutral-400 group-hover:text-white group-hover:translate-x-1.5 transition-all shrink-0 ml-2" />
+              <div className="shrink-0 flex items-center justify-center w-9 h-9 border border-white/40 group-hover:border-white group-hover:bg-white group-hover:text-black transition-colors rounded-none">
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </div>
             </a>
 
-            {/* BUTTON 2: VISIT THE FLOWER STORE */}
+            {/* BUTTON 2: VISIT THE FLOWER STORE (Solid White with sharp black border, bold serif typography) */}
             <a
               href="https://vocationlove.store"
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative flex items-center justify-between p-4 sm:p-5 bg-white hover:bg-neutral-50 text-neutral-950 rounded-xs border border-neutral-300 hover:border-neutral-500 transition-all duration-300 shadow-sm hover:shadow-md cursor-pointer"
+              className="group relative flex items-center justify-between p-4 sm:p-5 bg-white hover:bg-neutral-100 text-black rounded-none border-2 border-black transition-all duration-150 cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-none hover:translate-x-0.5 hover:translate-y-0.5"
             >
-              <div className="flex items-center gap-3.5">
-                <div className="p-2.5 bg-rose-50 group-hover:bg-rose-100 rounded-xs border border-rose-200 transition-colors">
-                  <Flower2 className="w-5 h-5 text-rose-600" />
+              <div className="flex-1 min-w-0 pr-3">
+                <div className="font-times text-base sm:text-lg font-bold tracking-wider uppercase text-black leading-tight">
+                  VISIT THE FLOWER STORE
                 </div>
-                <div>
-                  <div className="font-cinzel text-sm sm:text-base font-bold tracking-wider uppercase text-neutral-950 group-hover:text-black transition-colors">
-                    VISIT THE FLOWER STORE
-                  </div>
-                  <div className="text-[11px] font-mono text-neutral-500 mt-0.5">
-                    https://vocationlove.store
-                  </div>
+                <div className="text-xs font-mono text-neutral-600 mt-1 truncate">
+                  vocationlove.store • Exclusive curated bouquets
                 </div>
               </div>
-              <ArrowRight className="w-5 h-5 text-neutral-500 group-hover:text-black group-hover:translate-x-1.5 transition-all shrink-0 ml-2" />
+              <div className="shrink-0 flex items-center justify-center w-9 h-9 border-2 border-black group-hover:bg-black group-hover:text-white transition-colors rounded-none">
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5" />
+              </div>
             </a>
           </div>
         </div>
 
         {/* Discreet Bottom Bar with Close Button */}
-        <div className="px-5 py-3 bg-neutral-100 border-t border-neutral-200 flex items-center justify-between">
-          <div className="text-[11px] font-mono text-neutral-500">
-            Official Ecosytem Navigation
+        <div className="px-6 py-3.5 bg-neutral-100 border-t-2 border-black flex items-center justify-between rounded-none">
+          <div className="text-[11px] font-mono text-neutral-600 font-semibold uppercase tracking-wider">
+            Official Ecosystem Navigation
           </div>
           <button
             onClick={onClose}
-            className="text-xs font-mono font-semibold uppercase tracking-widest text-neutral-600 hover:text-black transition-colors px-3 py-1.5 rounded-xs hover:bg-neutral-200/60 cursor-pointer"
+            className="text-xs font-mono font-bold uppercase tracking-widest text-black bg-white hover:bg-black hover:text-white transition-colors px-4 py-1.5 border border-black rounded-none cursor-pointer"
           >
             Close
           </button>

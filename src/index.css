@@ -2,7 +2,8 @@
 
 @layer base {
   :root {
-    --font-cinzel: 'Cinzel', serif;
+    --font-times: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
+    --font-cinzel: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
     --font-bodoni: 'Bodoni Moda', serif;
     --font-sans: 'Plus Jakarta Sans', sans-serif;
   }
@@ -14,8 +15,11 @@
   }
 }
 
-.font-cinzel {
-  font-family: var(--font-cinzel);
+.font-cinzel,
+.font-times {
+  font-family: 'Times New Roman', Times, 'Nimbus Roman No9 L', serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
 }
 
 .font-bodoni {
