@@ -117,7 +117,7 @@ export const ChiefEditorModal: React.FC<ChiefEditorModalProps> = ({
         <div className="flex items-center justify-between px-5 py-4 bg-neutral-950 text-white border-b border-neutral-800">
           <div className="flex items-center gap-2.5">
             <Feather className="w-4 h-4 text-rose-400" />
-            <h3 className="font-cinzel text-base font-bold uppercase tracking-wider text-neutral-100">
+            <h3 className="font-times text-base font-bold uppercase tracking-wider text-neutral-100">
               Chief Editor Desk • Seeds of Love
             </h3>
           </div>

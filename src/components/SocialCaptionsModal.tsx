@@ -67,7 +67,7 @@ export const SocialCaptionsModal: React.FC<SocialCaptionsModalProps> = ({
             <span className="px-2 py-0.5 bg-neutral-800 text-[10px] font-mono tracking-widest text-neutral-300 border border-neutral-700">
               9:16 SOCIAL DISTRIBUTION
             </span>
-            <h3 className="font-cinzel text-sm sm:text-base font-bold uppercase tracking-wider text-neutral-100 truncate max-w-md">
+            <h3 className="font-times text-sm sm:text-base font-bold uppercase tracking-wider text-neutral-100 truncate max-w-md">
               {story.id} • Multiplatform Captions
             </h3>
           </div>
@@ -366,7 +366,7 @@ export const SocialCaptionsModal: React.FC<SocialCaptionsModalProps> = ({
 
                   {/* Top Feed Header */}
                   <div className="relative z-10 pt-8 px-4 flex items-center justify-between text-white text-[11px] font-bold">
-                    <span className="font-cinzel tracking-widest">VOCATIONLOVE</span>
+                    <span className="font-times font-bold tracking-widest">VOCATIONLOVE</span>
                     <span className="font-mono text-[9px] px-1.5 py-0.5 bg-rose-600 rounded-xs">
                       9:16 VERTICAL
                     </span>

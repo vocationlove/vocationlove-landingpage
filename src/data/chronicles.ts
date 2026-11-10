@@ -26,6 +26,9 @@ export interface ChronicleStory {
   titular: string;
   bajada: string;
   categoria: string;
+  titular_es?: string;
+  bajada_es?: string;
+  categoria_es?: string;
   fecha: string;
   autor: string;
   edicion: string;

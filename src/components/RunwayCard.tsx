@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChronicleStory } from '../data/chronicles';
+import { useLanguage } from '../context/LanguageContext';
+import { getStoryTitle, getStorySubtitle, getStoryCategory } from '../data/storyTranslations';
 import {
   Share2,
   Copy,
@@ -28,6 +30,7 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
   onPreviewMockup,
   onSelectStory
 }) => {
+  const { language, t } = useLanguage();
   const images = story.imagenes_runway?.length ? story.imagenes_runway : [story.imagen_9_16];
   const [currentImgIndex, setCurrentImgIndex] = useState(0);
   const [isPlayingRunway, setIsPlayingRunway] = useState(true);
@@ -78,7 +81,7 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
     >
       {/* Editorial Meta Bar */}
       <div className="flex items-center justify-between px-3 py-2 bg-neutral-100 border-b border-neutral-300 text-[10px] font-mono tracking-widest uppercase text-neutral-600">
-        <span className="font-semibold text-neutral-900">{story.categoria}</span>
+        <span className="font-semibold text-neutral-900">{getStoryCategory(story, language)}</span>
         <span>{story.fecha}</span>
       </div>
 
@@ -90,7 +93,7 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
             <img
               key={idx}
               src={imgSrc}
-              alt={`${story.titular} - Runway View ${idx + 1}`}
+              alt={`${getStoryTitle(story, language)} - Runway View ${idx + 1}`}
               referrerPolicy="no-referrer"
               className={`absolute inset-0 w-full h-full object-cover object-center transition-all duration-1000 ease-out ${
                 idx === currentImgIndex
@@ -176,17 +179,17 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
 
       {/* 2. Rigid Text Block (Master Mold from Screenshot 2) */}
       <div className="flex flex-col flex-1 border-t border-neutral-300">
-        {/* Box A: Titular (Serif / Uppercase / Haute Couture Fashion Format) */}
+        {/* Box A: Titular (Times New Roman Bold / Uppercase / Editorial Format) */}
         <div className="p-4 bg-white border-b border-neutral-300">
-          <h3 className="font-bodoni font-bold italic text-base sm:text-lg text-neutral-950 uppercase tracking-tight leading-snug">
-            {story.titular}
+          <h3 className="font-times font-bold text-base sm:text-lg text-neutral-950 uppercase tracking-tight leading-snug">
+            {getStoryTitle(story, language)}
           </h3>
         </div>
 
         {/* Box B: Bajada o Subtítulo */}
         <div className="p-4 bg-neutral-50 flex-1 flex flex-col justify-between">
           <p className="font-sans text-xs sm:text-sm text-neutral-700 leading-relaxed">
-            {story.bajada}
+            {getStorySubtitle(story, language)}
           </p>
 
           {/* Social Captions Distribution Toolbar - Exclusively visible to Editor (Invisible to public) */}
@@ -200,7 +203,7 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold uppercase tracking-wider rounded-xs transition-colors"
               >
                 <Share2 className="w-3.5 h-3.5" />
-                <span>Captions (4 Feeds)</span>
+                <span>{t('card.captionsBtn')}</span>
               </button>
 
               <button
@@ -211,12 +214,12 @@ export const RunwayCard: React.FC<RunwayCardProps> = ({
                 {hasCopied ? (
                   <>
                     <Check className="w-3.5 h-3.5 text-emerald-700" />
-                    <span className="text-[11px] font-semibold text-emerald-700">Copied!</span>
+                    <span className="text-[11px] font-semibold text-emerald-700">{t('card.copied')}</span>
                   </>
                 ) : (
                   <>
                     <Copy className="w-3.5 h-3.5" />
-                    <span className="text-[11px]">Copy IG</span>
+                    <span className="text-[11px]">{t('card.copyIg')}</span>
                   </>
                 )}
               </button>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { ChronicleStory } from '../data/chronicles';
 import { RunwayCard } from './RunwayCard';
+import { useLanguage } from '../context/LanguageContext';
+import { getStoryTitle, getStorySubtitle, CATEGORY_TRANSLATIONS } from '../data/storyTranslations';
 import { Feather, SlidersHorizontal, Layers, Sparkles } from 'lucide-react';
 
 interface ChroniclesRunwaySectionProps {
@@ -20,6 +22,7 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
   onSelectStory,
   onOpenEditor
 }) => {
+  const { language, t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [visibleCount, setVisibleCount] = useState<number>(12);
@@ -28,10 +31,20 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
 
   const filteredChronicles = chronicles.filter((c) => {
     const matchesCategory = selectedCategory === 'all' || c.categoria === selectedCategory;
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return matchesCategory;
+
+    const titleEn = c.titular.toLowerCase();
+    const subEn = c.bajada.toLowerCase();
+    const titleEs = getStoryTitle(c, 'es').toLowerCase();
+    const subEs = getStorySubtitle(c, 'es').toLowerCase();
+
     const matchesSearch =
-      !searchQuery.trim() ||
-      c.titular.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      c.bajada.toLowerCase().includes(searchQuery.toLowerCase());
+      titleEn.includes(query) ||
+      subEn.includes(query) ||
+      titleEs.includes(query) ||
+      subEs.includes(query);
+
     return matchesCategory && matchesSearch;
   });
 
@@ -47,6 +60,14 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
     return chronicles.filter((c) => c.categoria === cat).length;
   };
 
+  const getCategoryLabel = (cat: string) => {
+    if (cat === 'all') return t('chronicles.filterAll');
+    if (cat === 'SEEDS OF LOVE') return t('chronicles.filterSeeds');
+    if (cat === 'HOPE IN BLOOM') return t('chronicles.filterHope');
+    if (cat === 'DARE TO LOVE') return t('chronicles.filterDare');
+    return cat;
+  };
+
   return (
     <section id="runway-chronicles" className="w-full py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       {/* Section Header */}
@@ -54,20 +75,20 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
         <div>
           <div className="flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-neutral-500 mb-1">
             <span className="w-2 h-2 bg-neutral-900" />
-            <span>Hope in Bloom</span>
+            <span>{t('chronicles.badge')}</span>
           </div>
-          <h2 className="font-cinzel text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-neutral-950">
-            Seeds of Love
+          <h2 className="font-times text-2xl sm:text-3xl md:text-4xl font-bold uppercase tracking-tight text-neutral-950">
+            {t('chronicles.title')}
           </h2>
           <p className="mt-2 text-sm text-neutral-600 max-w-2xl leading-relaxed">
-            In one place you can stay up to date with vocationlove
+            {t('chronicles.description')}
           </p>
         </div>
 
         {/* Action Controls / Status badge */}
         <div className="flex items-center gap-3 shrink-0">
           <div className="px-3.5 py-1.5 bg-neutral-950 text-white text-[11px] font-mono tracking-widest uppercase border border-neutral-800">
-            your presence and continuity are truly valued
+            {t('chronicles.status')}
           </div>
         </div>
       </div>
@@ -85,7 +106,7 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
                   : 'text-neutral-700 hover:text-black hover:bg-neutral-100'
               }`}
             >
-              <span>{cat === 'all' ? 'All Stories' : cat}</span>
+              <span>{getCategoryLabel(cat)}</span>
               <span className={`text-[10px] font-mono px-1.5 py-0.2 rounded-xs ${
                 selectedCategory === cat ? 'bg-neutral-800 text-neutral-200' : 'bg-neutral-300/70 text-neutral-600'
               }`}>
@@ -104,7 +125,7 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
               setSearchQuery(e.target.value);
               setVisibleCount(12);
             }}
-            placeholder="Search headline or theme..."
+            placeholder={t('chronicles.searchPlaceholder')}
             className="px-3 py-1.5 text-xs bg-white border border-neutral-300 rounded-xs focus:ring-1 focus:ring-neutral-900 focus:outline-hidden w-full sm:w-64 font-sans"
           />
         </div>
@@ -112,13 +133,17 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
 
       {/* Active Count Metric */}
       <div className="py-3 flex items-center justify-between text-xs font-mono text-neutral-500">
-        <span>Showing {displayedChronicles.length} of {filteredChronicles.length} publications</span>
+        <span>
+          {t('chronicles.showingCount')
+            .replace('{count}', String(displayedChronicles.length))
+            .replace('{total}', String(filteredChronicles.length))}
+        </span>
         {searchQuery && (
           <button
             onClick={() => setSearchQuery('')}
             className="text-neutral-900 underline hover:text-black font-semibold"
           >
-            Clear Search
+            {t('chronicles.clearSearch')}
           </button>
         )}
       </div>
@@ -144,13 +169,13 @@ export const ChroniclesRunwaySection: React.FC<ChroniclesRunwaySectionProps> = (
             onClick={() => setVisibleCount((prev) => Math.min(prev + 12, filteredChronicles.length))}
             className="px-6 py-2.5 bg-neutral-950 hover:bg-neutral-800 text-white text-xs font-bold uppercase tracking-widest rounded-xs transition-colors shadow-sm"
           >
-            Load More Stories (+12)
+            {t('chronicles.loadMore')}
           </button>
           <button
             onClick={() => setVisibleCount(filteredChronicles.length)}
             className="px-6 py-2.5 bg-white hover:bg-neutral-100 text-neutral-900 border border-neutral-300 text-xs font-bold uppercase tracking-widest rounded-xs transition-colors"
           >
-            Show All ({filteredChronicles.length})
+            {t('chronicles.showAll').replace('{total}', String(filteredChronicles.length))}
           </button>
         </div>
       )}

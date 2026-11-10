@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { ChronicleStory } from '../data/chronicles';
-import { X, ArrowRight, ExternalLink } from 'lucide-react';
+import { useLanguage } from '../context/LanguageContext';
+import { getStoryTitle, getStorySubtitle, getStoryCategory } from '../data/storyTranslations';
+import { X, ArrowRight } from 'lucide-react';
 
 interface StoryEcosystemModalProps {
   story: ChronicleStory | null;
@@ -13,6 +15,7 @@ export const StoryEcosystemModal: React.FC<StoryEcosystemModalProps> = ({
   isOpen,
   onClose
 }) => {
+  const { language, t } = useLanguage();
   // Close on Escape key
   useEffect(() => {
     if (!isOpen) return;
@@ -42,13 +45,13 @@ export const StoryEcosystemModal: React.FC<StoryEcosystemModalProps> = ({
           <div className="flex items-center gap-2.5">
             <span className="w-2.5 h-2.5 bg-white rounded-none inline-block" />
             <span className="font-times font-bold text-xs uppercase tracking-widest text-white">
-              VOCATIONLOVE • ECOSYSTEM
+              {t('modal.ecosystemBadge')}
             </span>
           </div>
           <button
             onClick={onClose}
             className="p-1 text-neutral-400 hover:text-white transition-colors cursor-pointer rounded-none border border-transparent hover:border-white"
-            aria-label="Close"
+            aria-label={t('modal.close')}
           >
             <X className="w-5 h-5" />
           </button>
@@ -61,20 +64,20 @@ export const StoryEcosystemModal: React.FC<StoryEcosystemModalProps> = ({
             <div className="w-20 sm:w-24 aspect-[2/3] shrink-0 overflow-hidden bg-black rounded-none border border-black shadow-xs">
               <img
                 src={coverImage}
-                alt={story.titular}
+                alt={getStoryTitle(story, language)}
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover object-center filter contrast-105"
               />
             </div>
             <div className="flex-1 min-w-0">
               <div className="text-[10px] font-mono uppercase tracking-widest text-neutral-600 font-bold mb-1">
-                {story.categoria}
+                {getStoryCategory(story, language)}
               </div>
               <h3 className="font-times font-bold text-sm sm:text-base text-black uppercase leading-snug tracking-tight line-clamp-2">
-                {story.titular}
+                {getStoryTitle(story, language)}
               </h3>
               <p className="mt-1.5 text-xs text-neutral-700 font-sans line-clamp-2 leading-relaxed">
-                {story.bajada}
+                {getStorySubtitle(story, language)}
               </p>
             </div>
           </div>
@@ -82,7 +85,7 @@ export const StoryEcosystemModal: React.FC<StoryEcosystemModalProps> = ({
           {/* Brutalist Action Buttons: No phone or flower icons, pure editorial design */}
           <div className="space-y-3.5 pt-1">
             <div className="text-[11px] font-mono uppercase tracking-widest text-black font-bold px-0.5">
-              CHOOSE DESTINATION
+              {t('modal.destinationTag')}
             </div>
 
             {/* BUTTON 1: ENTER THE SOCIAL APP (Solid Black, sharp corners, bold serif typography) */}
@@ -94,10 +97,10 @@ export const StoryEcosystemModal: React.FC<StoryEcosystemModalProps> = ({
             >
               <div className="flex-1 min-w-0 pr-3">
                 <div className="font-times text-base sm:text-lg font-bold tracking-wider uppercase text-white leading-tight">
-                  ENTER THE SOCIAL APP
+                  {t('modal.btnSocialApp')}
                 </div>
                 <div className="text-xs font-mono text-neutral-300 mt-1 truncate">
-                  vocationlove.app • For those who dare
+                  {t('modal.btnSocialSub')}
                 </div>
               </div>
               <div className="shrink-0 flex items-center justify-center w-9 h-9 border border-white/40 group-hover:border-white group-hover:bg-white group-hover:text-black transition-colors rounded-none">
@@ -114,10 +117,10 @@ export const StoryEcosystemModal: React.FC<StoryEcosystemModalProps> = ({
             >
               <div className="flex-1 min-w-0 pr-3">
                 <div className="font-times text-base sm:text-lg font-bold tracking-wider uppercase text-black leading-tight">
-                  VISIT THE FLOWER STORE
+                  {t('modal.btnStore')}
                 </div>
                 <div className="text-xs font-mono text-neutral-600 mt-1 truncate">
-                  vocationlove.store • Exclusive curated bouquets
+                  {t('modal.btnStoreSub')}
                 </div>
               </div>
               <div className="shrink-0 flex items-center justify-center w-9 h-9 border-2 border-black group-hover:bg-black group-hover:text-white transition-colors rounded-none">
@@ -130,13 +133,13 @@ export const StoryEcosystemModal: React.FC<StoryEcosystemModalProps> = ({
         {/* Discreet Bottom Bar with Close Button */}
         <div className="px-6 py-3.5 bg-neutral-100 border-t-2 border-black flex items-center justify-between rounded-none">
           <div className="text-[11px] font-mono text-neutral-600 font-semibold uppercase tracking-wider">
-            Official Ecosystem Navigation
+            {t('modal.footerNav')}
           </div>
           <button
             onClick={onClose}
             className="text-xs font-mono font-bold uppercase tracking-widest text-black bg-white hover:bg-black hover:text-white transition-colors px-4 py-1.5 border border-black rounded-none cursor-pointer"
           >
-            Close
+            {t('modal.close')}
           </button>
         </div>
       </div>
