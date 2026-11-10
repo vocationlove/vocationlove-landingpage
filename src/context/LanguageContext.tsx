@@ -69,6 +69,18 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
     'modal.footerNav': 'Navegación oficial del ecosistema',
     'modal.close': 'Cerrar',
 
+    // Share Section
+    'share.title': 'COMPARTE',
+    'share.subtitle': 'Compártelo para que cada día seamos más!',
+    'share.copied': '¡Copiado para compartir!',
+    'share.copiedFor': '¡Copiado para {network}!',
+    'share.video1Title': 'CÓMO FUNCIONA VOCATIONLOVE',
+    'share.video1Desc': 'Descubre la app: ingreso seguro con Google, cartilla vocacional y coincidencia mutua.',
+    'share.video2Title': 'VOCACIÓN AL AMOR',
+    'share.video2Desc': 'Cada historia es una obra de arte. Un lienzo en blanco para la verdad.',
+    'share.video3Title': 'EL COMPROMISO CUSTODIA LA PUREZA',
+    'share.video3Desc': 'Un refugio en la verdad. El camino hacia tu vocación al amor.',
+
     // Footer
     'footer.app': 'App',
     'footer.store': 'Tienda',
@@ -136,6 +148,18 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
     'modal.btnStoreSub': 'vocationlove.store • Exclusive curated bouquets',
     'modal.footerNav': 'Official Ecosystem Navigation',
     'modal.close': 'Close',
+
+    // Share Section
+    'share.title': 'COMPARTE',
+    'share.subtitle': 'Compártelo para que cada día seamos más!',
+    'share.copied': 'Copied to share!',
+    'share.copiedFor': 'Copied for {network}!',
+    'share.video1Title': 'HOW VOCATIONLOVE WORKS',
+    'share.video1Desc': 'Discover the app: secure Google login, vocational profile and mutual match.',
+    'share.video2Title': 'VOCATION TO LOVE',
+    'share.video2Desc': 'Every story is a work of art. A blank canvas for the truth.',
+    'share.video3Title': 'COMMITMENT GUARDS PURITY',
+    'share.video3Desc': 'A refuge in truth. The journey toward your vocation to love.',
 
     // Footer
     'footer.app': 'App',
