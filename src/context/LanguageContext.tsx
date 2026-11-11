@@ -95,7 +95,7 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
     // Header
     'nav.inBloom': 'IN BLOOM',
     'nav.love': 'LOVE',
-    'nav.ecosystem': 'ECOSISTEM',
+    'nav.ecosystem': 'ECOSYSTEM',
     'nav.legal': 'LEGAL',
     'nav.goToApp': 'GO TO APP',
     'brand.tagline': 'DARE TO LOVE',
@@ -174,15 +174,15 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
 };
 
 const LanguageContext = createContext<LanguageContextType>({
-  language: 'es',
+  language: 'en',
   setLanguage: () => {},
-  locale: 'es-AR',
-  isEs: true,
+  locale: 'en-US',
+  isEs: false,
   t: (key: string) => key
 });
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Default Locale: es-AR (Español de Argentina)
+  // Default Locale: en (English) - Anyone entering sees English first and can switch to Spanish
   const [language, setLanguageState] = useState<Language>(() => {
     try {
       const saved = localStorage.getItem('vocationlove_locale');
@@ -190,7 +190,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     } catch {
       // Fallback
     }
-    return 'es';
+    return 'en';
   });
 
   const setLanguage = (lang: Language) => {
