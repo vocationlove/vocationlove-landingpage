@@ -22,9 +22,9 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
 
     // Hero Breaking News
     'hero.badge': 'EN FLOR',
-    'hero.urgent': 'En Flor - El Papa visita América',
+    'hero.urgent': 'En Flor',
     'hero.headline':
-      'El Papa León XIV, durante su visita a la Argentina, destacó la importancia del amor y la familia como pilares fundamentales de la sociedad',
+      'NACE VOCATIONLOVE\nPARA QUIENES VUELVEN A PREGUNTARSE SI ES POSIBLE AMAR PARA SIEMPRE.',
     'hero.popeQuote':
       '«Tu corazón anhela el amor. Un amor que sea profundo, generoso y duradero. Este anhelo no es una casualidad. Es el signo de que estás hecho para amar.» Papa León XIV',
     'hero.launchMarquee':
@@ -104,9 +104,9 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
 
     // Hero Breaking News
     'hero.badge': 'IN BLOOM',
-    'hero.urgent': 'In Bloom - The pope visits America',
+    'hero.urgent': 'In Bloom',
     'hero.headline':
-      'Pope Leo XIV, during his visit to Argentina, emphasized the importance of love and family as the pillars of society',
+      'VOCATIONLOVE IS BORN\nFOR THOSE WHO WONDER AGAIN IF LIFELONG LOVE IS POSSIBLE.',
     'hero.popeQuote':
       '«Your heart longs for love. A love that is deep, self-sacrificing and enduring. This longing is no accident. It is a sign that you are made for love.» Pope Leo XIV',
     'hero.launchMarquee':

@@ -48,21 +48,6 @@ export const HeroBreakingNews: React.FC<HeroBreakingNewsProps> = ({ onExploreApp
           ))}
         </div>
 
-        {/* Subtle Slide Indicators */}
-        <div className="absolute bottom-2 sm:bottom-3 right-4 sm:right-6 z-20 flex items-center gap-1.5 bg-black/50 backdrop-blur-xs px-2 py-1 rounded-full border border-white/10">
-          {HEADER_ROTATING_IMAGES.map((item, dotIdx) => (
-            <button
-              key={item.id}
-              onClick={() => setCurrentHeaderIndex(dotIdx)}
-              title={item.label}
-              className={`h-1.5 transition-all rounded-full ${
-                dotIdx === currentHeaderIndex ? 'w-5 bg-white' : 'w-1.5 bg-white/40 hover:bg-white/70'
-              }`}
-              aria-label={`Go to slide ${dotIdx + 1}`}
-            />
-          ))}
-        </div>
-
         {/* Cinematic gradient vignette */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/30 pointer-events-none" />
 
@@ -104,7 +89,7 @@ export const HeroBreakingNews: React.FC<HeroBreakingNewsProps> = ({ onExploreApp
           <div className="text-[11px] sm:text-xs font-mono font-bold tracking-widest uppercase text-neutral-500 mb-1.5">
             {t('hero.urgent')}
           </div>
-          <h2 className="font-times text-base sm:text-xl md:text-2xl lg:text-3xl font-bold uppercase tracking-wide text-neutral-950 leading-snug">
+          <h2 className="font-times text-base sm:text-xl md:text-2xl lg:text-3xl font-bold uppercase tracking-wide text-neutral-950 leading-snug whitespace-pre-line">
             {t('hero.headline')}
           </h2>
         </div>

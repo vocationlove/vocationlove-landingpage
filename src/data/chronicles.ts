@@ -39,7 +39,7 @@ export interface ChronicleStory {
 }
 
 export const BREAKING_NEWS_HERO = {
-  titular: "Pope Leo XIV, during his visit to Argentina, emphasized the importance of love and family as the pillars of society",
+  titular: "VOCATIONLOVE IS BORN - FOR THOSE WHO WONDER AGAIN IF LIFELONG LOVE IS POSSIBLE",
   bajada: "«Your heart longs for love. A love that is deep, self-sacrificing and enduring. This longing is no accident. It is a sign that you are made for love.» Pope Leo XIV",
   subtitulosMarquesina: [
     "«Your heart longs for love. A love that is deep, self-sacrificing and enduring. This longing is no accident. It is a sign that you are made for love.» Pope Leo XIV"
