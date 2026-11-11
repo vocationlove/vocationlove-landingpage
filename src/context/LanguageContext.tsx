@@ -72,8 +72,10 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
     // Share Section
     'share.title': 'COMPARTE',
     'share.subtitle': 'Compártelo para que cada día seamos más!',
+    'share.status': 'tu presencia y continuidad son verdaderamente valoradas',
+    'share.shareOn': 'Compartir video en:',
     'share.copied': '¡Copiado para compartir!',
-    'share.copiedFor': '¡Copiado para {network}!',
+    'share.copiedFor': '¡Texto copiado para {network}!',
     'share.video1Title': 'CÓMO FUNCIONA VOCATIONLOVE',
     'share.video1Desc': 'Descubre la app: ingreso seguro con Google, cartilla vocacional y coincidencia mutua.',
     'share.video2Title': 'VOCACIÓN AL AMOR',
@@ -150,10 +152,12 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
     'modal.close': 'Close',
 
     // Share Section
-    'share.title': 'COMPARTE',
-    'share.subtitle': 'Compártelo para que cada día seamos más!',
+    'share.title': 'SHARE',
+    'share.subtitle': 'Share it so our community grows every day!',
+    'share.status': 'your presence and continuity are truly valued',
+    'share.shareOn': 'Share video on:',
     'share.copied': 'Copied to share!',
-    'share.copiedFor': 'Copied for {network}!',
+    'share.copiedFor': 'Caption copied for {network}!',
     'share.video1Title': 'HOW VOCATIONLOVE WORKS',
     'share.video1Desc': 'Discover the app: secure Google login, vocational profile and mutual match.',
     'share.video2Title': 'VOCATION TO LOVE',
