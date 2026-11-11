@@ -22,7 +22,7 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
 
     // Hero Breaking News
     'hero.badge': 'EN FLOR',
-    'hero.urgent': 'En Flor',
+    'hero.urgent': 'En Flor - enamórate',
     'hero.headline':
       'NACE VOCATIONLOVE\nPARA QUIENES VUELVEN A PREGUNTARSE SI ES POSIBLE AMAR PARA SIEMPRE.',
     'hero.popeQuote':
@@ -104,7 +104,7 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
 
     // Hero Breaking News
     'hero.badge': 'IN BLOOM',
-    'hero.urgent': 'In Bloom',
+    'hero.urgent': 'In Bloom - fall in love',
     'hero.headline':
       'VOCATIONLOVE IS BORN\nFOR THOSE WHO WONDER AGAIN IF LIFELONG LOVE IS POSSIBLE.',
     'hero.popeQuote':
