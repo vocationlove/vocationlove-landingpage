@@ -11,7 +11,8 @@ const HEADER_ROTATING_IMAGES = [
   { id: 'vlc', src: '/assets/aistudio/vlc_66f6ec40.png', label: 'VLC - True Connection' },
   { id: 'vlc6', src: '/assets/aistudio/vlc6_0823f608.png', label: 'vlc6 - Brotherhood & Freedom' },
   { id: 'vlc9', src: '/assets/aistudio/vlc9_1de0510d.png', label: 'vlc9 - Joy in Bloom' },
-  { id: 'vlc10', src: '/assets/aistudio/vlc10_31069266.png', label: 'vlc10 - Radiant Fellowship' }
+  { id: 'vlc10', src: '/assets/aistudio/vlc10_31069266.png', label: 'vlc10 - Radiant Fellowship' },
+  { id: 'lifelong-love', src: '/assets/aistudio/lifelong_love_4826d756.png', label: 'Lifelong Love - Joy & Devotion' }
 ];
 
 export const HeroBreakingNews: React.FC<HeroBreakingNewsProps> = ({ onExploreApp }) => {
