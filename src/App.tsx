@@ -69,7 +69,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#f7f7f7] text-neutral-900 flex flex-col font-sans selection:bg-neutral-900 selection:text-white">
+    <div className="min-h-screen bg-[#f7f7f7] text-neutral-900 flex flex-col font-sans selection:bg-neutral-900 selection:text-white overflow-x-hidden w-full max-w-full">
       {/* Toast notification */}
       {toastMessage && (
         <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 px-4 py-3 bg-neutral-950 text-white text-xs font-mono tracking-wider uppercase border border-neutral-700 rounded-xs shadow-2xl animate-in slide-in-from-bottom duration-300">

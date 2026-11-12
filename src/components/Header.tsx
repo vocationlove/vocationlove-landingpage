@@ -12,13 +12,13 @@ export const Header: React.FC<HeaderProps> = ({ onOpenLegal }) => {
   const { t } = useLanguage();
 
   return (
-    <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-neutral-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4 sm:gap-8">
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-neutral-300 w-full">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between gap-2 sm:gap-6">
         {/* Zone 1: Brand Wordmark (Single text element in luxury display serif) */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0">
           <a
             href="/"
-            className="font-times text-xl sm:text-2xl font-black tracking-widest text-neutral-950 uppercase select-none hover:opacity-85 transition-opacity"
+            className="font-times text-lg sm:text-2xl font-black tracking-widest text-neutral-950 uppercase select-none hover:opacity-85 transition-opacity"
           >
             VOCATIONLOVE
           </a>
@@ -46,18 +46,20 @@ export const Header: React.FC<HeaderProps> = ({ onOpenLegal }) => {
           </button>
         </nav>
 
-        {/* Zone 3: Language Selector [ES | EN] + Primary Action to .app */}
-        <div className="flex items-center gap-2.5 sm:gap-3 shrink-0">
-          {/* Minimalist Dropdown Selector in top-right */}
+        {/* Zone 3: Active Language Selector + Primary Action "APP" [↗] */}
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+          {/* Minimalist Dropdown Selector in top-right showing active language */}
           <LanguageSelector />
 
           <a
             href="https://vocationlove.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 bg-blue-900 text-white text-[11px] sm:text-xs font-semibold uppercase tracking-wider rounded-none hover:bg-blue-950 transition-all shadow-sm whitespace-nowrap shrink-0"
+            title={t('nav.goToApp')}
+            aria-label={t('nav.goToApp')}
+            className="group inline-flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 bg-blue-900 text-white text-[11px] sm:text-xs font-bold uppercase tracking-wider rounded-none hover:bg-blue-950 transition-all shadow-sm whitespace-nowrap shrink-0"
           >
-            <span>{t('nav.goToApp')}</span>
+            <span>APP</span>
             <ExternalLink className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
