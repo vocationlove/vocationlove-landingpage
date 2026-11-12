@@ -12,7 +12,8 @@ const HEADER_ROTATING_IMAGES = [
   { id: 'vlc6', src: '/assets/aistudio/vlc6_0823f608.png', label: 'vlc6 - Brotherhood & Freedom' },
   { id: 'vlc9', src: '/assets/aistudio/vlc9_1de0510d.png', label: 'vlc9 - Joy in Bloom' },
   { id: 'vlc10', src: '/assets/aistudio/vlc10_31069266.png', label: 'vlc10 - Radiant Fellowship' },
-  { id: 'vlc-50s', src: '/assets/aistudio/Vocation_Love_a_los_50_92a7fbfe.png', label: 'Vocation Love - Mature Love & Grace' }
+  { id: 'pareja-40', src: '/assets/aistudio/pareja_de_40_f0af94b2.png', label: 'Pareja en el Parque - Plenitud y Sonrisa' },
+  { id: 'pareja-50', src: '/assets/aistudio/pareja_de_50_49420aba.png', label: 'Pareja en la Cafetería - Amor Maduro y Serena Alegría' }
 ];
 
 export const HeroBreakingNews: React.FC<HeroBreakingNewsProps> = ({ onExploreApp }) => {
