@@ -24,7 +24,7 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
     'hero.badge': 'EN FLOR',
     'hero.urgent': 'En Flor - enamórate',
     'hero.headline':
-      'NACE VOCATIONLOVE\nPARA QUIENES VUELVEN A PREGUNTARSE SI ES POSIBLE AMAR PARA SIEMPRE.\nPORQUE PRESIENTEN QUE EL AMOR ES LA VOCACIÓN MÁS GRANDE.',
+      'NACE VOCATIONLOVE RED SOCIAL\nPARA LOS QUE SABEN QUE EL AMOR ES LA VOCACIÓN MÁS GRANDE.',
     'hero.popeQuote':
       '«Tu corazón anhela el amor. Un amor que sea profundo, generoso y duradero. Este anhelo no es una casualidad. Es el signo de que estás hecho para amar.» Papa León XIV',
     'hero.launchMarquee':
@@ -106,7 +106,7 @@ const UI_TRANSLATIONS: Record<Language, Record<string, string>> = {
     'hero.badge': 'IN BLOOM',
     'hero.urgent': 'In Bloom - fall in love',
     'hero.headline':
-      'VOCATIONLOVE IS BORN\nFOR THOSE WHO WONDER AGAIN IF LIFELONG LOVE IS POSSIBLE.\nBECAUSE THEY SENSE THAT LOVE IS THE GREATEST VOCATION.',
+      'VOCATIONLOVE SOCIAL NETWORK IS BORN\nFOR THOSE WHO KNOW THAT LOVE IS THE GREATEST VOCATION.',
     'hero.popeQuote':
       '«Your heart longs for love. A love that is deep, self-sacrificing and enduring. This longing is no accident. It is a sign that you are made for love.» Pope Leo XIV',
     'hero.launchMarquee':

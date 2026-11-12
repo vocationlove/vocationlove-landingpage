@@ -39,7 +39,7 @@ export interface ChronicleStory {
 }
 
 export const BREAKING_NEWS_HERO = {
-  titular: "VOCATIONLOVE IS BORN - FOR THOSE WHO WONDER AGAIN IF LIFELONG LOVE IS POSSIBLE. BECAUSE THEY SENSE THAT LOVE IS THE GREATEST VOCATION.",
+  titular: "VOCATIONLOVE SOCIAL NETWORK IS BORN - FOR THOSE WHO KNOW THAT LOVE IS THE GREATEST VOCATION.",
   bajada: "«Your heart longs for love. A love that is deep, self-sacrificing and enduring. This longing is no accident. It is a sign that you are made for love.» Pope Leo XIV",
   subtitulosMarquesina: [
     "«Your heart longs for love. A love that is deep, self-sacrificing and enduring. This longing is no accident. It is a sign that you are made for love.» Pope Leo XIV"
