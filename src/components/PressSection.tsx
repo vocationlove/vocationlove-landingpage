@@ -57,17 +57,14 @@ LUGAR: REDACCIÓN CENTRAL VOCATIONLOVE
 TITULAR:
 NACE VOCATIONLOVE RED SOCIAL: PARA LOS QUE SABEN QUE EL AMOR ES LA VOCACIÓN MÁS GRANDE.
 
-En un contexto digital marcado por el descarte afectivo, la superficialidad de las aplicaciones de citas tradicionales y el agotamiento emocional de millones de solteros, nace formalmente VOCATIONLOVE (vocationlove.com / vocationlove.app), la primera red social de cortejo intencional orientada al noviazgo y matrimonio duradero con valores compartidos.
+Nace formalmente VOCATIONLOVE (vocationlove.com / vocationlove.app), la primera red social orientada al noviazgo y matrimonio duradero con valores compartidos.
 
-Bajo la convicción profunda de que el amor no es un pasatiempo efímero sino la vocación más trascendente del ser humano, VOCATIONLOVE ofrece un refugio en la verdad donde las personas pueden reencontrarse con el anhelo de enamorarse para siempre.
+Bajo la convicción profunda de que el amor es la vocación más trascendente del ser humano, VOCATIONLOVE ofrece un refugio en la verdad donde las personas pueden reencontrarse con el anhelo de enamorarse para siempre.
 
 CARACTERÍSTICAS FUNDAMENTALES DE LA PLATAFORMA:
 1. Acceso y Verificación Segura: Ingreso verificado mediante cuentas Google para garantizar identidades genuinas y respeto comunitario.
 2. Cartilla Vocacional Intencional: Cada miembro define sus valores, visión del matrimonio y convicciones esenciales.
 3. Coincidencia Mutua: Interacción basada en el descubrimiento sincero y la comunión de principios.
-4. Ecosistema de Acompañamiento: Integración de crónicas de pasarela y una boutique de flores (vocationlove.store) que devuelve al cortejo su belleza tangible.
-
-«Tu corazón anhela el amor. Un amor que sea profundo, generoso y duradero. Este anhelo no es una casualidad. Es el signo de que estás hecho para amar.»
 
 CONTACTO OFICIAL PARA MEDIOS:
 Prensa y Portavocía: ${pressEmail}
@@ -80,15 +77,14 @@ ORIGIN: VOCATIONLOVE EDITORIAL HEADQUARTERS
 HEADLINE:
 VOCATIONLOVE SOCIAL NETWORK IS BORN: FOR THOSE WHO KNOW THAT LOVE IS THE GREATEST VOCATION.
 
-In a digital landscape marked by emotional burnout, shallow swipe dating apps, and relational cynicism, VOCATIONLOVE (vocationlove.com / vocationlove.app) officially launches as the first intentional dating social network focused on lifelong courtship and marriage rooted in shared values.
+VOCATIONLOVE (vocationlove.com / vocationlove.app) officially launches as the first social network focused on lasting courtship and marriage rooted in shared values.
 
-Driven by the conviction that love is not a disposable pastime but the highest vocation of human life, VOCATIONLOVE provides a refuge in truth for those who dare to love forever.
+Driven by the deep conviction that love is the highest vocation of human life, VOCATIONLOVE offers a refuge in truth where people can rediscover the longing to fall in love forever.
 
 KEY HIGHLIGHTS:
-1. Verified Secure Access: Safe Google Authentication ensuring genuine identity and mutual accountability.
-2. Vocational Profile: Members declare life values, faith foundations, and marriage goals.
-3. Mutual Intentional Matching: Connection driven by principled compatibility.
-4. Integrated Ecosystem: Runway chronicles and a curated floral boutique (vocationlove.store) reviving the beauty of genuine courtship.
+1. Verified Secure Access: Safe Google Authentication ensuring genuine identity and mutual respect.
+2. Intentional Vocational Profile: Members define their values, vision of marriage, and core convictions.
+3. Mutual Matching: Interaction rooted in sincere discovery and shared principles.
 
 MEDIA CONTACT:
 Press & Communications: ${pressEmail}
