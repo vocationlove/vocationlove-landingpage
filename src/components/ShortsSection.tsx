@@ -166,7 +166,7 @@ const VideoCard: React.FC<{
             onClick={() => onOpenShareModal(video, 'whatsapp')}
             className="w-full py-2.5 px-3 bg-black hover:bg-neutral-900 text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 rounded-none border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-colors cursor-pointer select-none"
           >
-            <Share2 className="w-3.5 h-3.5 text-emerald-400" />
+            <Share2 className="w-3.5 h-3.5 text-white" />
             <span>{language === 'es' ? 'Compartir o Descargar Video' : 'Share or Download Video'}</span>
           </button>
 

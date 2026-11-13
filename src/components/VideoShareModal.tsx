@@ -157,7 +157,7 @@ export const VideoShareModal: React.FC<VideoShareModalProps> = ({
         {/* Header Modal Bar */}
         <div className="bg-black text-white px-4 sm:px-6 py-3.5 flex items-center justify-between border-b-2 border-black">
           <div className="flex items-center gap-2.5 min-w-0">
-            <Share2 className="w-4 h-4 text-emerald-400 shrink-0" />
+            <Share2 className="w-4 h-4 text-white shrink-0" />
             <div className="min-w-0">
               <span className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase font-bold block">
                 {language === 'es' ? 'CENTRO DE COMPARTIR • SHORTS 9:16' : 'SHARE HUB • 9:16 SHORTS'}

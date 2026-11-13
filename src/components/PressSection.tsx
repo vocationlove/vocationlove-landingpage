@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import {
-  Newspaper,
   Download,
   Copy,
   Check,
@@ -132,8 +131,7 @@ MEDIA INQUIRIES: press@vocationlove.com`;
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 border-b-2 border-black">
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-white text-[10px] font-mono uppercase tracking-widest font-bold mb-3">
-              <Newspaper className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="inline-flex items-center px-3 py-1 bg-black text-white text-[10px] font-mono uppercase tracking-widest font-bold mb-3">
               <span>{language === 'es' ? 'SALA DE PRENSA OFICIAL' : 'OFFICIAL PRESS ROOM'}</span>
             </div>
             <h2 className="font-times text-3xl sm:text-4xl md:text-5xl font-bold uppercase tracking-tight text-black">
@@ -169,7 +167,7 @@ MEDIA INQUIRIES: press@vocationlove.com`;
           {/* Release #1 */}
           <div className="bg-white border-2 border-black rounded-none shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-5 sm:p-7">
             <div className="flex flex-wrap items-center justify-between gap-3 text-xs font-mono text-neutral-500 font-bold uppercase tracking-wider pb-3 border-b border-neutral-200">
-              <span className="text-emerald-700">COMUNICADO OFICIAL #01 • 12 NOV 2026</span>
+              <span className="text-black">COMUNICADO OFICIAL #01 • 12 NOV 2026</span>
               <span>VOCATIONLOVE.COM • GLOBAL</span>
             </div>
 
@@ -381,7 +379,7 @@ MEDIA INQUIRIES: press@vocationlove.com`;
                   />
                 </div>
                 <h4 className="font-times font-bold text-base text-black uppercase">
-                  {language === 'es' ? 'Foto de Prensa: Plenitud y Sonrisa' : 'Press Photo: Radiance & Fellowship'}
+                  {language === 'es' ? 'Foto de Prensa: +40' : 'Press Photo: +40'}
                 </h4>
                 <p className="text-xs text-neutral-600 font-sans mt-1">
                   {language === 'es' ? 'Fotografía oficial para artículos, entrevistas y reportajes.' : 'Official campaign photograph for editorial use.'}
@@ -408,7 +406,7 @@ MEDIA INQUIRIES: press@vocationlove.com`;
                   />
                 </div>
                 <h4 className="font-times font-bold text-base text-black uppercase">
-                  {language === 'es' ? 'Foto de Prensa: Amor Maduro' : 'Press Photo: Enduring Mature Love'}
+                  {language === 'es' ? 'Foto de Prensa: +50' : 'Press Photo: +50'}
                 </h4>
                 <p className="text-xs text-neutral-600 font-sans mt-1">
                   {language === 'es' ? 'Fotografía oficial de prensa en alta resolución.' : 'Official high-resolution press image.'}
@@ -429,8 +427,7 @@ MEDIA INQUIRIES: press@vocationlove.com`;
         {/* 4. Contacto Oficial de Prensa */}
         <div className="bg-black text-white p-6 sm:p-8 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="max-w-2xl">
-            <div className="text-[11px] font-mono uppercase tracking-widest text-emerald-400 font-bold mb-1.5 flex items-center gap-2">
-              <Mail className="w-4 h-4" />
+            <div className="text-[11px] font-mono uppercase tracking-widest text-white font-bold mb-1.5">
               <span>{language === 'es' ? 'CONTACTO EXCLUSIVO PARA MEDIOS & PERIODISTAS' : 'EXCLUSIVE MEDIA & PRESS CONTACT'}</span>
             </div>
             <h3 className="font-times text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white leading-snug">
