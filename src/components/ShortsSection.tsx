@@ -6,6 +6,7 @@ import { VideoShareModal, VideoShareItem } from './VideoShareModal';
 interface VideoItem {
   id: string;
   src: string;
+  poster: string;
   titleKey: string;
   descKey: string;
   fallbackTitle: string;
@@ -16,6 +17,7 @@ const SHARE_VIDEOS: VideoItem[] = [
   {
     id: 'how-it-works',
     src: '/assets/aistudio/VOCATIONLOVE.APP_df69cd2e.mp4',
+    poster: '/assets/aistudio/poster_how_it_works.jpg',
     titleKey: 'share.video1Title',
     descKey: 'share.video1Desc',
     fallbackTitle: 'CÓMO FUNCIONA VOCATIONLOVE',
@@ -24,6 +26,7 @@ const SHARE_VIDEOS: VideoItem[] = [
   {
     id: 'vocation-love',
     src: '/assets/aistudio/vocationlove.app_Vocaci_n_al_amor_b1931877.mp4',
+    poster: '/assets/aistudio/poster_vocation_love.jpg',
     titleKey: 'share.video2Title',
     descKey: 'share.video2Desc',
     fallbackTitle: 'VOCACIÓN AL AMOR',
@@ -32,6 +35,7 @@ const SHARE_VIDEOS: VideoItem[] = [
   {
     id: 'commitment-purity',
     src: '/assets/aistudio/Couple_embracing_in_metro_car_ef752b1e_98b34194.mp4',
+    poster: '/assets/aistudio/poster_commitment_purity.jpg',
     titleKey: 'share.video3Title',
     descKey: 'share.video3Desc',
     fallbackTitle: 'EL COMPROMISO CUSTODIA LA PUREZA',
@@ -48,6 +52,7 @@ const VideoCard: React.FC<{
   const { t, language } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [hasStarted, setHasStarted] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = () => {
@@ -58,6 +63,7 @@ const VideoCard: React.FC<{
     } else {
       videoRef.current.play();
       setIsPlaying(true);
+      setHasStarted(true);
     }
   };
 
@@ -107,13 +113,27 @@ const VideoCard: React.FC<{
         <video
           ref={videoRef}
           src={video.src}
+          poster={video.poster}
+          preload="metadata"
           playsInline
           loop
           muted={isMuted}
-          onPlay={() => setIsPlaying(true)}
+          onPlay={() => {
+            setIsPlaying(true);
+            setHasStarted(true);
+          }}
           onPause={() => setIsPlaying(false)}
           className="w-full h-full object-cover object-center"
         />
+
+        {/* Instant preview thumbnail for iOS Safari / WhatsApp in-app WebView before first play */}
+        {!hasStarted && (
+          <img
+            src={video.poster}
+            alt={title}
+            className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+          />
+        )}
 
         {/* Play / Pause Overlay Button */}
         {!isPlaying && (

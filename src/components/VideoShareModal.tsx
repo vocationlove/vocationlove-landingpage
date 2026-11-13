@@ -15,6 +15,7 @@ import { useLanguage } from '../context/LanguageContext';
 export interface VideoShareItem {
   id: string;
   src: string;
+  poster?: string;
   titleKey: string;
   descKey: string;
   fallbackTitle: string;
@@ -182,6 +183,8 @@ export const VideoShareModal: React.FC<VideoShareModalProps> = ({
           <div className="relative w-24 sm:w-28 aspect-[9/16] bg-black border border-black shadow-sm shrink-0 overflow-hidden">
             <video
               src={video.src}
+              poster={video.poster}
+              preload="auto"
               playsInline
               muted
               loop
