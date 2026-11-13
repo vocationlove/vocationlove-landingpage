@@ -38,6 +38,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenLegal }) => {
           <a href="#ecosistema-app" className="hover:text-black transition-colors whitespace-nowrap shrink-0">
             {t('nav.ecosystem')}
           </a>
+          <a href="#press-section" className="hover:text-black transition-colors whitespace-nowrap shrink-0">
+            {t('nav.press')}
+          </a>
           <button
             onClick={onOpenLegal}
             className="hover:text-black transition-colors cursor-pointer whitespace-nowrap shrink-0"

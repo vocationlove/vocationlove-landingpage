@@ -73,7 +73,7 @@ export const HeroBreakingNews: React.FC<HeroBreakingNewsProps> = ({ onExploreApp
 
         {/* Live Indicator Pill on top right: IN BLOOM */}
         <div className="absolute top-3 right-3 sm:top-6 sm:right-6 z-20 flex items-center gap-2 px-3 py-1 bg-black/60 backdrop-blur-md border border-white/20 text-white text-[10px] sm:text-[11px] font-mono uppercase tracking-widest">
-          <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
           <span>{t('hero.badge')}</span>
         </div>
 
@@ -103,7 +103,7 @@ export const HeroBreakingNews: React.FC<HeroBreakingNewsProps> = ({ onExploreApp
           {[1, 2].map((loopIdx) => (
             <React.Fragment key={`pope-marquee-${loopIdx}`}>
               <span className="flex items-center gap-3">
-                <span className="text-rose-500 font-bold">●</span>
+                <span className="text-emerald-500 font-bold">●</span>
                 <span>{t('hero.popeQuote')}</span>
               </span>
               <span className="text-neutral-600 font-serif">///</span>

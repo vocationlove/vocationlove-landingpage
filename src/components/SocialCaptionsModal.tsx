@@ -121,7 +121,7 @@ export const SocialCaptionsModal: React.FC<SocialCaptionsModalProps> = ({
                       : 'border-neutral-200 bg-white/70 hover:bg-white text-neutral-600'
                   }`}
                 >
-                  <Instagram className="w-4 h-4 text-pink-600 shrink-0" />
+                  <Instagram className="w-4 h-4 text-neutral-900 shrink-0" />
                   <div className="text-xs uppercase tracking-wider">Instagram Feed & Reels</div>
                 </button>
 
@@ -367,7 +367,7 @@ export const SocialCaptionsModal: React.FC<SocialCaptionsModalProps> = ({
                   {/* Top Feed Header */}
                   <div className="relative z-10 pt-8 px-4 flex items-center justify-between text-white text-[11px] font-bold">
                     <span className="font-times font-bold tracking-widest">VOCATIONLOVE</span>
-                    <span className="font-mono text-[9px] px-1.5 py-0.5 bg-rose-600 rounded-xs">
+                    <span className="font-mono text-[9px] px-1.5 py-0.5 bg-emerald-700 rounded-xs">
                       9:16 VERTICAL
                     </span>
                   </div>

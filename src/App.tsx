@@ -8,6 +8,7 @@ import { Header } from './components/Header';
 import { HeroBreakingNews } from './components/HeroBreakingNews';
 import { ChroniclesRunwaySection } from './components/ChroniclesRunwaySection';
 import { LaunchBannerStrip } from './components/LaunchBannerStrip';
+import { PressSection } from './components/PressSection';
 import { ShortsSection } from './components/ShortsSection';
 import { SocialCaptionsModal } from './components/SocialCaptionsModal';
 import { ChiefEditorModal } from './components/ChiefEditorModal';
@@ -105,7 +106,10 @@ export default function App() {
         {/* 4. Franja de Lanzamiento Ecosistema App (Bloques Vinotinto/Borgoña del Molde) */}
         <LaunchBannerStrip />
 
-        {/* 5. Sección SHORTS (Tutorial en proporción 9:16 para YouTube, Instagram, X, TikTok) */}
+        {/* 5. Sala de Prensa Oficial (Comunicados, Factsheet, Media Kit, Contacto Periodistas) */}
+        <PressSection />
+
+        {/* 6. Sección SHORTS (Tutorial en proporción 9:16 para YouTube, Instagram, X, TikTok) */}
         <ShortsSection />
       </main>
 

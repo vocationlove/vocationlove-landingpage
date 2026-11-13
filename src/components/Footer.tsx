@@ -45,6 +45,12 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
             >
               {t('footer.store')}
             </a>
+            <a
+              href="#press-section"
+              className="text-neutral-300 hover:text-white transition-colors"
+            >
+              {t('nav.press')}
+            </a>
             <button
               onClick={onOpenLegal}
               className="text-neutral-300 hover:text-white transition-colors cursor-pointer"
