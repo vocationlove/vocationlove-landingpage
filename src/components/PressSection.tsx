@@ -391,18 +391,18 @@ MEDIA INQUIRIES: press@vocationlove.com`;
               </button>
             </div>
 
-            {/* Asset 3: Pareja en Cafetería (50 años) */}
+            {/* Asset 3: Pareja +18 */}
             <div className="bg-white border-2 border-black p-5 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] flex flex-col justify-between">
               <div>
                 <div className="w-full aspect-[4/3] bg-neutral-900 border border-neutral-300 overflow-hidden mb-3">
                   <img
-                    src="/assets/aistudio/pareja_de_50_49420aba.png"
-                    alt="Foto oficial de prensa - Pareja 50"
+                    src="/assets/aistudio/vlc_66f6ec40.png"
+                    alt="Foto oficial de prensa - +18"
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <h4 className="font-times font-bold text-base text-black uppercase">
-                  {language === 'es' ? 'Foto de Prensa: +50' : 'Press Photo: +50'}
+                  {language === 'es' ? 'Foto de Prensa: +18' : 'Press Photo: +18'}
                 </h4>
                 <p className="text-xs text-neutral-600 font-sans mt-1">
                   {language === 'es' ? 'Fotografía oficial de prensa en alta resolución.' : 'Official high-resolution press image.'}
@@ -410,7 +410,7 @@ MEDIA INQUIRIES: press@vocationlove.com`;
               </div>
               <button
                 type="button"
-                onClick={() => handleDownloadAsset('/assets/aistudio/pareja_de_50_49420aba.png', 'VOCATIONLOVE_Foto_Prensa_Pareja50.png')}
+                onClick={() => handleDownloadAsset('/assets/aistudio/vlc_66f6ec40.png', 'VOCATIONLOVE_Foto_Prensa_18.png')}
                 className="mt-4 w-full py-2 bg-black hover:bg-neutral-800 text-white font-mono text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 rounded-none border border-black shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] cursor-pointer"
               >
                 <Download className="w-3.5 h-3.5 text-yellow-400" />
